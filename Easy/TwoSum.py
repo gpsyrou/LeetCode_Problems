@@ -13,3 +13,7 @@ class Solution(object):
                 else:
                     zet += 1      
         return ls
+
+# Example
+x = Solution()
+x.twoSum([2,7,11,15],26)
