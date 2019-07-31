@@ -8,17 +8,14 @@ Input: words = ["gin", "zen", "gig", "msg"]
 Output: 2
 
 '''
-
 class Solution(object):
     def uniqueMorseRepresentations(self, words):
         """
         :type words: List[str]
         :rtype: int
         """
-        morse =     [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-        
+        morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]     
         letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-        
         final, dct = [], {}
         
         for i in zip(letters,morse): 
@@ -33,8 +30,6 @@ class Solution(object):
             final.append(temp)
             
         return len(set(final))
-    
-    
 
 X = Solution()
 X.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
