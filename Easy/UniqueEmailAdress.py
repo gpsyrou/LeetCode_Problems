@@ -14,4 +14,19 @@ It is possible to use both of these rules at the same time.
 Given a list of emails, we send one email to each address in the list.  How many different addresses actually receive mails?
 '''
 
+class Solution:
+    def numUniqueEmails(self, emails: List[str]) -> int:
+        ls = []
+        for email in emails:
+            local_name = email.split(sep = "@")[0].replace(".","")
+            if '+' in local_name:
+                local_name = local_name.split('+')[0]
+            domain_name = email.split(sep = "@")[1]
 
+            ls.append(local_name+'@'+domain_name)
+        
+        return len(set(ls))
+      
+      
+x = Solution()
+x.numUniqueEmails(["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"])
