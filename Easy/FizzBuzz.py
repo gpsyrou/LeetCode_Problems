@@ -23,3 +23,5 @@ class Solution:
                 
         return numbers
         
+x = Solution()
+x.fizzBuzz(15)
