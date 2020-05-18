@@ -5,22 +5,19 @@ If there is no common prefix, return an empty string "".
 '''
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        
         prefix = ""
-        ls_len = len(strs)
-        strs = sorted(strs, key=len)
-        for indx, letter in enumerate(strs[0]):
-            equal = False
-            for i in range(1, ls_len):
-                try:
-                    if strs[i][indx] == letter:
-                        equal = True
-                    else:
-                        equal = False
-                except IndexError:
-                    pass
-
-            if equal is True:
-                prefix += letter
+        
+        if not strs: 
+            return prefix
+        
+        s_str = min(strs, key=len)
+        
+        for i in range(len(s_str)):
+            if all([x.startswith(s_str[:i+1]) for x in strs]):
+                prefix = s_str[:i+1]
+            else:
+                break
                 
         return prefix
 
