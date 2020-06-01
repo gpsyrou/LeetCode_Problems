@@ -11,6 +11,6 @@ Return the number of students doing their homework at time queryTime. More forma
 
 class Solution:
     def busyStudent(self, startTime: List[int], endTime: List[int], queryTime: int) -> int:
-        numOfStud = sum([1 for t in range(len(startTime)) if  (startTime[t] <= queryTime) & (queryTime <= endTime[t])])
                 
-        return numOfStud
+        return sum([1 for t in range(len(startTime)) if  (startTime[t] <= queryTime) & (queryTime <= endTime[t])])
+
